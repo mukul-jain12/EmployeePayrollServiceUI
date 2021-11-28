@@ -4,7 +4,7 @@ class EmployeePayrollData {
     }
 
     set name(name) {
-        let nameRegex = RegExp("^[A-Z]{1}[a-z]{2,}$");
+        let nameRegex = RegExp("^[A-Z]{1}[a-zA-Z\\s]{2,}$");
         if (nameRegex.test(name))
             this._name = name;
         else throw "Name is incorrect";
@@ -66,6 +66,7 @@ class EmployeePayrollData {
 
     toString() {
         return 'Name = ' + this.name + ", Gender = " + this.gender + ", ProfilePic = " + this.profilePic +
-            ", Department = " + this.department + ", Salary = " + this.salary + ", StartDate = " + this.start_date + ", Note = " + this.note;
+            ", Department = " + this.department + ", Salary = " + this.salary +
+            ", StartDate = " + this.start_date + ", Note = " + this.note;
     }
 }
